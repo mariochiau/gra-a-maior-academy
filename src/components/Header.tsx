@@ -56,9 +56,9 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link to="/login">
+            <Link to="/auth">
               <Button variant="ghost" className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10">
-                Entrar
+                Área de Membro
               </Button>
             </Link>
             <Link to="/inscricoes">
@@ -96,9 +96,9 @@ const Header = () => {
                 </Link>
               ))}
               <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-primary-foreground/10">
-                <Link to="/login" onClick={() => setIsMenuOpen(false)}>
+                <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
                   <Button variant="outline" className="w-full border-primary-foreground/30 text-primary-foreground">
-                    Entrar
+                    Área de Membro
                   </Button>
                 </Link>
                 <Link to="/inscricoes" onClick={() => setIsMenuOpen(false)}>
