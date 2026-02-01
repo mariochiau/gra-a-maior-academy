@@ -4,44 +4,24 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Clock, BookOpen, Users, Award, Check, ArrowRight } from "lucide-react";
 
-const courses = [
-  {
-    id: "trimestre",
-    title: "Curso Trimestral",
-    subtitle: "Formação Intensiva",
-    price: "1.100,00",
-    currency: "MT",
-    duration: "3 meses",
-    features: [
-      "Módulos completos por trimestre",
-      "Material didático incluso",
-      "Aulas presenciais e online",
-      "Certificado de conclusão",
-      "Acesso à biblioteca digital",
-      "Acompanhamento pastoral",
-    ],
-    highlight: false,
-  },
-  {
-    id: "semestre",
-    title: "Curso Semestral",
-    subtitle: "Formação Completa",
-    price: "1.600,00",
-    currency: "MT",
-    duration: "6 meses",
-    features: [
-      "Dois módulos completos",
-      "Material didático premium",
-      "Aulas presenciais e online",
-      "Certificado de conclusão",
-      "Acesso ilimitado à biblioteca",
-      "Mentoria individual",
-      "Participação em eventos",
-      "Desconto em materiais extras",
-    ],
-    highlight: true,
-  },
-];
+const course = {
+  id: "formacao-completa",
+  title: "Formação Teológica Completa",
+  subtitle: "Renovação Trimestral",
+  price: "1.600,00",
+  currency: "MT",
+  duration: "Renovação a cada 3 meses",
+  features: [
+    "Acesso a todos os módulos",
+    "Material didático premium",
+    "Aulas presenciais e online",
+    "Certificado de conclusão",
+    "Acesso ilimitado à biblioteca",
+    "Mentoria individual",
+    "Participação em eventos",
+    "Acompanhamento pastoral",
+  ],
+};
 
 const subjects = [
   "Introdução à Bíblia",
@@ -82,92 +62,61 @@ const Cursos = () => {
           </div>
         </section>
 
-        {/* Pricing Cards */}
+        {/* Pricing Card */}
         <section className="py-24 bg-secondary">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {courses.map((course) => (
-                <div
-                  key={course.id}
-                  className={`relative rounded-2xl p-8 transition-all duration-300 ${
-                    course.highlight
-                      ? "bg-primary text-primary-foreground shadow-card scale-105"
-                      : "bg-card shadow-soft hover:shadow-card"
-                  }`}
-                >
-                  {course.highlight && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                      <span className="bg-accent text-primary text-sm font-semibold px-4 py-1 rounded-full">
-                        Mais Popular
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="text-center mb-8">
-                    <h3 className={`text-2xl font-serif font-bold mb-2 ${
-                      course.highlight ? "text-primary-foreground" : "text-primary"
-                    }`}>
-                      {course.title}
-                    </h3>
-                    <p className={`text-sm ${
-                      course.highlight ? "text-primary-foreground/70" : "text-muted-foreground"
-                    }`}>
-                      {course.subtitle}
-                    </p>
-                  </div>
-
-                  <div className="text-center mb-8">
-                    <div className="flex items-baseline justify-center gap-1">
-                      <span className={`text-5xl font-bold ${
-                        course.highlight ? "text-accent" : "text-primary"
-                      }`}>
-                        {course.price}
-                      </span>
-                      <span className={course.highlight ? "text-primary-foreground/70" : "text-muted-foreground"}>
-                        {course.currency}
-                      </span>
-                    </div>
-                    <div className={`flex items-center justify-center gap-2 mt-2 text-sm ${
-                      course.highlight ? "text-primary-foreground/70" : "text-muted-foreground"
-                    }`}>
-                      <Clock className="w-4 h-4" />
-                      <span>{course.duration}</span>
-                    </div>
-                  </div>
-
-                  <ul className="space-y-3 mb-8">
-                    {course.features.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
-                          course.highlight ? "bg-accent" : "bg-accent/10"
-                        }`}>
-                          <Check className={`w-3 h-3 ${
-                            course.highlight ? "text-primary" : "text-accent"
-                          }`} />
-                        </div>
-                        <span className={`text-sm ${
-                          course.highlight ? "text-primary-foreground/90" : "text-foreground/80"
-                        }`}>
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link to="/inscricoes">
-                    <Button
-                      className={`w-full py-6 text-lg ${
-                        course.highlight
-                          ? "btn-gold"
-                          : "bg-primary text-primary-foreground hover:bg-primary/90"
-                      }`}
-                    >
-                      Inscrever-se
-                      <ArrowRight className="ml-2 w-5 h-5" />
-                    </Button>
-                  </Link>
+            <div className="max-w-lg mx-auto">
+              <div className="relative rounded-2xl p-8 bg-primary text-primary-foreground shadow-card">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <span className="bg-accent text-primary text-sm font-semibold px-4 py-1 rounded-full">
+                    Plano Único
+                  </span>
                 </div>
-              ))}
+
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-serif font-bold mb-2 text-primary-foreground">
+                    {course.title}
+                  </h3>
+                  <p className="text-sm text-primary-foreground/70">
+                    {course.subtitle}
+                  </p>
+                </div>
+
+                <div className="text-center mb-8">
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-5xl font-bold text-accent">
+                      {course.price}
+                    </span>
+                    <span className="text-primary-foreground/70">
+                      {course.currency}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mt-2 text-sm text-primary-foreground/70">
+                    <Clock className="w-4 h-4" />
+                    <span>{course.duration}</span>
+                  </div>
+                </div>
+
+                <ul className="space-y-3 mb-8">
+                  {course.features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 bg-accent">
+                        <Check className="w-3 h-3 text-primary" />
+                      </div>
+                      <span className="text-sm text-primary-foreground/90">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link to="/auth">
+                  <Button className="w-full py-6 text-lg btn-gold">
+                    Inscrever-se
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </section>

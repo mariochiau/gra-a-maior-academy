@@ -11,7 +11,6 @@ const Header = () => {
     { href: "/", label: "Home" },
     { href: "/sobre", label: "Sobre" },
     { href: "/cursos", label: "Cursos" },
-    { href: "/inscricoes", label: "Inscrições" },
     { href: "/faq", label: "FAQ" },
   ];
 
@@ -54,16 +53,11 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* CTA Button */}
+          <div className="hidden lg:flex items-center">
             <Link to="/auth">
-              <Button variant="ghost" className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10">
-                Área de Membro
-              </Button>
-            </Link>
-            <Link to="/inscricoes">
               <Button className="btn-gold">
-                Inscreva-se
+                Área do Aluno
               </Button>
             </Link>
           </div>
@@ -95,15 +89,10 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-primary-foreground/10">
+              <div className="mt-4 pt-4 border-t border-primary-foreground/10">
                 <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="outline" className="w-full border-primary-foreground/30 text-primary-foreground">
-                    Área de Membro
-                  </Button>
-                </Link>
-                <Link to="/inscricoes" onClick={() => setIsMenuOpen(false)}>
                   <Button className="w-full btn-gold">
-                    Inscreva-se
+                    Área do Aluno
                   </Button>
                 </Link>
               </div>

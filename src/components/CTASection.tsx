@@ -29,9 +29,9 @@ const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/inscricoes">
+            <Link to="/auth">
               <Button size="lg" className="btn-gold text-lg px-8 py-6 h-auto group">
-                Fazer Inscrição
+                Criar Conta
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
