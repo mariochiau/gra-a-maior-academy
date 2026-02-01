@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import {
   Accordion,
@@ -59,9 +58,8 @@ const FAQ = () => {
   );
 
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main className="pt-20">
+    <div className="min-h-screen pt-20">
+      <main>
         {/* Hero */}
         <section className="py-24 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4">
