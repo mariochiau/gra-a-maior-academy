@@ -19,8 +19,8 @@ import { useNavigate } from "react-router-dom";
 const menuItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/admin" },
   { icon: Users, label: "Alunos", path: "/admin/alunos" },
-  { icon: BookOpen, label: "Cursos", path: "/admin/cursos" },
   { icon: GraduationCap, label: "Aulas", path: "/admin/aulas" },
+  { icon: BookOpen, label: "Biblioteca", path: "/admin/biblioteca" },
   { icon: FileText, label: "Matrículas", path: "/admin/matriculas" },
   { icon: Settings, label: "Configurações", path: "/admin/configuracoes" },
 ];

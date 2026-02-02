@@ -1,12 +1,11 @@
-import { Home, BookOpen, BarChart3, CreditCard, User } from "lucide-react";
+import { Home, BookOpen, Library, User } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { icon: Home, label: "Início", path: "/dashboard" },
-  { icon: BookOpen, label: "Cursos", path: "/dashboard/cursos" },
-  { icon: BarChart3, label: "Progresso", path: "/dashboard/progresso" },
-  { icon: CreditCard, label: "Planos", path: "/dashboard/planos" },
+  { icon: BookOpen, label: "Aulas", path: "/dashboard/cursos" },
+  { icon: Library, label: "Biblioteca", path: "/dashboard/biblioteca" },
   { icon: User, label: "Perfil", path: "/dashboard/perfil" },
 ];
 

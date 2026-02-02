@@ -13,6 +13,16 @@ import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
+// Admin pages
+import AdminAlunos from "./pages/admin/AdminAlunos";
+import AdminAulas from "./pages/admin/AdminAulas";
+import AdminBiblioteca from "./pages/admin/AdminBiblioteca";
+
+// Dashboard pages
+import DashboardCursos from "./pages/dashboard/DashboardCursos";
+import DashboardBiblioteca from "./pages/dashboard/DashboardBiblioteca";
+import DashboardPerfil from "./pages/dashboard/DashboardPerfil";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -28,10 +38,19 @@ const App = () => (
           <Route path="/cursos" element={<Cursos />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/auth" element={<Auth />} />
+          
+          {/* Dashboard Routes */}
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard/*" element={<Dashboard />} />
+          <Route path="/dashboard/cursos" element={<DashboardCursos />} />
+          <Route path="/dashboard/biblioteca" element={<DashboardBiblioteca />} />
+          <Route path="/dashboard/perfil" element={<DashboardPerfil />} />
+          
+          {/* Admin Routes */}
           <Route path="/admin" element={<Admin />} />
-          <Route path="/admin/*" element={<Admin />} />
+          <Route path="/admin/alunos" element={<AdminAlunos />} />
+          <Route path="/admin/aulas" element={<AdminAulas />} />
+          <Route path="/admin/biblioteca" element={<AdminBiblioteca />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
